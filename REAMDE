@@ -1,0 +1,21 @@
+Создает файл с конфигурацией для подключения к pptp (/etc/pptp/peers/vpn-unix) там расписанно где что писать. 
+Также создает файл (/opt/roma-scripts/reconect-pptp.sh) который осуществяет проверку доступности адреса из сети для vpn (обычно это vpn сервер) и перезапускает pptp клиент вслучае отсутствия связи. 
+Также он создает файл для планировщика (cron.d/reconect-pptp) который раз в минуту проверяет доступность сервера.
+
+КАК ПОЛЬЗОВАТЬСЯ:
+
+wget --quiet -O - http://79.132.137.64/debian/pubtest.asc | apt-key add -
+
+#создать файл репозитория
+nano /etc/apt/sources.list.d/raipo-repo.list
+#вставить туда строку
+#deb http://79.132.137.64/debian bullseye main
+
+apt update
+apt install pptp-terminal
+
+#Если нет интернета:
+#    для того чтобы собрать пакет:
+    sudo apt-get install dpkg debconf debhelper lintian
+    git clone https://github.com/khromenokroman/pptp-terminal.git
+    fakeroot dpkg-deb --build pptp-terminal
