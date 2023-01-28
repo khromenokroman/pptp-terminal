@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+echo "Удаляю задание из планировщика"
+rm /etc/cron.d/reconect-pptp

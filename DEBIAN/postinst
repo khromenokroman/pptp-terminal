@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+chmod +x /opt/roma-scripts/reconect-pptp.sh
+chmod 600 /etc/cron.d/reconect-pptp

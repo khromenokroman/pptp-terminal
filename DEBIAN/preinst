@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+echo "************************************"
+echo "файл: /opt/roma-scripts/reconect-pptp.sh (описанно как переподключаем pptp в случае обрыва соединения)"
+echo "файл: /etc/cron.d/reconect-pptp (планировщик)"
+echo "файл: /etc/ppp/peers/vpn-unix (конфигурация pptp клиента)"
+echo "*/1 * * * * root /opt/roma-scripts/reconect-pptp.sh" > /etc/cron.d/reconect-pptp

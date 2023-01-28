@@ -1,0 +1,15 @@
+pty "pptp 66.66.66.66 --nolaunchpppd" #IP
+unit 1 #номер соединения ppp1
+require-mschap-v2
+require-mppe-128
+user Jon #имя пользователя
+password "Magomed" #пароль
+nodeflate
+nobsdcomp
+noauth
+#defaultroute
+nodefaultroute  #отключаем маршрут по умолчанию,
+                #если он вам нужен - замените на defaultroute
+persist #пере подключаться при обрыве
+maxfail 10 #количество попыток пере подключения
+holdoff 10 #интервал между подключениями

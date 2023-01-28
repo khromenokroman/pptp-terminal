@@ -1,0 +1,7 @@
+Package:pptp-terminal
+Version:1.0-7
+Maintainer:roma555@yandex.ru
+Depends:psmisc,pptp-linux,python3
+Architecture:all
+Section:admin
+Description:Создает файл с конфигурацией для подключения к pptp (/etc/pptp/peers/vpn-unix) там расписанно где что писать. Также создает файл (/opt/roma-scripts/reconect-pptp.sh) который осуществяет проверку доступности адреса из сети для vpn (обычно это vpn сервер) и перезапускает pptp клиент вслучае отсутствия связи, также он создает файл для планировщика (cron.d/reconect-pptp) который раз в минуту проверяет доступность сервера.
